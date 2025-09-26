@@ -186,6 +186,21 @@
       0% { transform: translateY(0) scale(1); }
       100% { transform: translateY(-110vh) scale(1.2); }
     }
+    .cake-video {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  display: none; /* Ẩn mặc định */
+}
+
+.cake-video video {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
   </style>
 </head>
 <body>
@@ -205,6 +220,10 @@
         <img src="https://scontent.fcxr1-1.fna.fbcdn.net/v/t1.15752-9/462527801_2562052573996111_6323855479908405751_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=9f807c&_nc_ohc=fm00jjrh5GUQ7kNvwHey9gr&_nc_oc=AdnhGo5roduNwAk4VAZuaFYrxHQXZV9cPSU0I24Q_I0yycI4E-pL3Cqmw1Oi7KRMKzE&_nc_zt=23&_nc_ht=scontent.fcxr1-1.fna&oh=03_Q7cD3QGr0nXU6Jlg72NQFzQUqqkReNBNBqNs6S3ZzWH9NgfYmA&oe=68FDFB6D" alt="">
       </div>
     </div>
+    <!-- Video bánh kem -->
+<div class="cake-video" id="cakeVideo">
+  <video src="https://media.istockphoto.com/id/679378260/vi/video/b%C3%A1nh-sinh-nh%E1%BA%ADt-vui-v%E1%BA%BB.mp4?s=mp4-640x640-is&k=20&c=Cnr2oeU2kJ2lt-jTDpfej7pE8E1DVNM2ODwrk8nw_yk=" autoplay muted loop></video>
+</div>
 
     <!-- Thiệp ở giữa -->
     <div class="center-card">
@@ -215,8 +234,8 @@
           </div>
           <div class="card-face card-back">
             <h2>Happy Birthday Ngọc Thiện!</h2>
-            <p>Chúc thi đậu được nguyện vọng 1 nha 💖</p>
-            <p>Và enjoy những năm cuối của lớp 12 </p>
+            <p>Chúc thi đậu được nguyện vọng 1 nha! 💖 </p>
+            <p>Và Tận Hưởng Những Năm Cuối Cấp Nhé! 🔥</p>
             <img src="https://scontent.fcxr1-1.fna.fbcdn.net/v/t1.15752-9/467458682_1051825666698888_8015279734057614576_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=9f807c&_nc_ohc=OurmKTHD2TkQ7kNvwEmFSp0&_nc_oc=AdlvArqnxDnKzYkjiBTENTHREwnKNS8__vDWH0dojzmxKcGFUiOHJJeUiTbifHzvPnY&_nc_zt=23&_nc_ht=scontent.fcxr1-1.fna&oh=03_Q7cD3QGvUq_9IZEk3rf3-sQG3kcIfPqAJkezq_GTi8HovfzH5A&oe=68FE1192" alt="Ảnh Ngọc Thiện">
           </div>
         </div>
@@ -250,9 +269,11 @@
       if (card.classList.contains('open')) {
         leftSlide.classList.add('active');
         rightSlide.classList.add('active');
+        cakeVideo.style.display = "block";
       } else {
         leftSlide.classList.remove('active');
         rightSlide.classList.remove('active');
+        cakeVideo.style.display = "none";
       }
     });
     document.body.addEventListener("click", () => {
